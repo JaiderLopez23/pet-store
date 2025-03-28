@@ -4,11 +4,11 @@
     $port        ="5432";
     $dbname       ="petstore";
     $user        ="postgres";
-    $possword    ="postgres";
+    $password    ="postgres";
 
     $data_connection="
         host=$host
-        post=$post
+        port=$port
         dbname=$dbname
         user=$user
         password=$password
@@ -17,10 +17,10 @@
     $conn = pg_connect($data_connection);
 
     if(!$conn){
-        echo("Connection error")
+        echo "Connection error";
 
     }else{
-        echo("Success !!!")
+        echo "Success !!!";
     }
 
     pg_close($conn);
