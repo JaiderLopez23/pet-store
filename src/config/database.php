@@ -2,7 +2,7 @@
     
     $host        ="localhost";
     $port        ="5432";
-    $dbname       ="petstore";
+    $dbname      ="petstore";
     $user        ="postgres";
     $password    ="postgres";
 
@@ -23,6 +23,6 @@
         echo "Success !!!";
     }
 
-    pg_close($conn);
+    //pg_close($conn);
 
 ?>
