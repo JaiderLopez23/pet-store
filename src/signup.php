@@ -6,6 +6,9 @@
    $lname = $_POST['l_name'];
    $email = $_POST['e_mail'];
    $passw = $_POST['p_assw'];
+
+// INCRIPTAR CONTRASEÑA
+   $hashed_password = password_hash($passw, PASSWORD_DEFAULT);
     
    $sql_validate_email ="
       select 
@@ -27,13 +30,15 @@
        }else{
           $sql = "INSERT INTO users
           (firstname , lastname, email, password)
-          VALUES ('$fname','$lname','$email','$passw')
+          VALUES ('$fname','$lname','$email','$hashed_password')
  
           ";
 
           $ans = pg_query($conn, $sql);
           if($ans){
-          echo "User has been created seccessfeully";
+          //echo "User has been created seccessfeully";
+          echo "<script>alert('User has created. Go to login')</script>";
+          header('Refresh:0;URL=http://localhost/pet-store/src/signin.html');
        }else{
            echo "Error";
          }
