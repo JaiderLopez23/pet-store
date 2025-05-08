@@ -1,10 +1,13 @@
 <?php
+     
+    //Supabase DB connection
      $host        ="aws-0-us-east-2.pooler.supabase.com";
      $port        ="6543";
      $dbname      ="postgres";
      $user        ="postgres.tprexcklrcpreuchonwl";
      $password    ="unicesmag@@";
     /*
+    //Local DB connection
     $host        ="localhost";
     $port        ="5432";
     $dbname      ="petstore";
